@@ -7,7 +7,7 @@ const connectDB = async (url) => {
     }catch(err){
         console.log(err);
         process.exit(1);
-    }url
+    }
 }
 
 module.exports = connectDB;
