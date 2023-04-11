@@ -67,7 +67,16 @@ const addBook = asyncHandler(async (req, res) => {
 // @description  Edit Book
 // @routes       PUT /edit/:bookId
 // @access       Private
+const editBook = asyncHandler(async (req, res) => {
+  const book = await Book.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  
+  if (!book) {
+    res.status(400).json({ message: "Book not found" });
+  }
 
+  res.send({ book });
+  }
+);
 
 // @description  Delete Book
 // @ routes      Delete /del/:bookId
