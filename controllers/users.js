@@ -72,7 +72,7 @@ const getMe = asyncHandler( async (req,res) => {
 
 // Generate Token
 const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {       // thats the id in middleware
         expiresIn: '30d'
     });
 }
