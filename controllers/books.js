@@ -81,7 +81,16 @@ const editBook = asyncHandler(async (req, res) => {
 // @description  Delete Book
 // @ routes      Delete /del/:bookId
 // @access       Private
+const deleteBook = asyncHandler(async (req, res) => {
+  const book = await Book.findByIdAndDelete(req.params.id);
 
+  if (!book) {
+    res.status(400).json({ message: "Book Not Found!" });
+  }
+
+  res.status(400).json({ });
+  }
+);
 
 module.exports = {
     getPublic, getPrivate, bookshelf,
