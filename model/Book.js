@@ -1,9 +1,9 @@
 const mongoose = require ('mongoose');
+
 const bookSchema =new mongoose.Schema({
         title:{
             type:String,
             required:[true , "Please enter the book title"],
-
         },
         author:{
             type: String,
@@ -17,9 +17,8 @@ const bookSchema =new mongoose.Schema({
             type:String,
             required:[true , "Please enter the iSBN Number"],
         },
-        Rating:{
+        rating:{
             type:String,
-
         },
         access:{
             type:String,
@@ -37,5 +36,5 @@ const bookSchema =new mongoose.Schema({
     }
 );
 
-module.exports=mongoose.model("Book",bookschema)
+module.exports=mongoose.model("Book", bookSchema)
 
