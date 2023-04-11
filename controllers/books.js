@@ -64,6 +64,16 @@ const addBook = asyncHandler(async (req, res) => {
   }
 );
 
+// @description  Edit Book
+// @routes       PUT /edit/:bookId
+// @access       Private
+
+
+// @description  Delete Book
+// @ routes      Delete /del/:bookId
+// @access       Private
+
+
 module.exports = {
     getPublic, getPrivate, bookshelf,
     addBook
