@@ -94,5 +94,5 @@ const deleteBook = asyncHandler(async (req, res) => {
 
 module.exports = {
     getPublic, getPrivate, bookshelf,
-    addBook
+    addBook, editBook, deleteBook
 };
