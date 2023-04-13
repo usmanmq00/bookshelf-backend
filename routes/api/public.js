@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { publicBooks } = require('../../controllers/public');
+const { publicBooks, publicBook } = require('../../controllers/public');
 
 router.route('/').get(publicBooks);
 

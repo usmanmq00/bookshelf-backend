@@ -92,7 +92,20 @@ const deleteBook = asyncHandler(async (req, res) => {
   }
 );
 
+// @description  Get Single Public Books
+// @routes       GET /public
+// @access       Public
+const publicBook = asyncHandler(async (req, res) => {
+  const book = await Book.findById(req.params.id);
+  
+  if (!book) {
+    res.status(400).json({ message: "Book Not Found" });
+  }
+
+  res.send(book);
+});
+
 module.exports = {
     getPublic, getPrivate, bookshelf,
-    addBook, editBook, deleteBook
+    addBook, editBook, deleteBook, publicBook
 };
